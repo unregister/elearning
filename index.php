@@ -8,10 +8,46 @@ define('_ROOT',	dirname(__FILE__)."/");
 
 # Konstanta untuk mendapatkan url aplikasi
 define('_URL',$url);
+define('_ASSET_URL',$url."assets/");
 
 include_once _ROOT . "includes/koneksi.php";
 include_once _ROOT . "includes/fungsi.db.php";
 include_once _ROOT . "includes/fungsi.web.php";
 
-$data = GetOne("select kurikulum_tahun_pertama from kurikulum where kurikulum_id = 1");
-adodb_pr($data);
+/*
+Setiap halaman kemungkinan membutuhkan sebuah script aksi, baik berupa aksi saat submit form 
+ato aksi untuk mengolah data dari parameter $_GET. Nah fungsi script dibawah ini adalah :
+- pertama cek kedalam module yg bersangkutan apakah ada file dengan nama action_{nama_module}.php
+  apabila ditemukan maka akan secara langsung diincludekan.
+- apabila tidak ada maka akan diabaikan
+*/
+if( isset($_GET['mod']) and !empty($_GET['mod']) )
+{
+	$mod = trim($_GET['mod']);
+	$file = "action_".$actionmod;
+	if( file_exists(_ROOT . "modules/$mod/$file.php") ){
+		include_once _ROOT . "modules/$mod/$file.php";
+	}
+	
+}
+
+# START LAYOUT
+include_once _ROOT . "includes/header.php";
+include_once _ROOT . "includes/sidebar.php";
+
+if( isset($_GET['mod']) and !empty($_GET['mod']) )
+{
+	$mod = trim($_GET['mod']);
+	if( file_exists(_ROOT . "modules/$mod/$mod.php") ){
+		include_once _ROOT . "modules/$mod/$mod.php";
+	}else{
+		include_once _ROOT . "includes/404.php";	
+	}
+}
+else
+{
+	include_once _ROOT . "modules/home/home.php";	
+}
+
+include_once _ROOT . "includes/footer.php";
+# END LAYOUT

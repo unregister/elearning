@@ -4,7 +4,7 @@
 function Execute( $query = "" )
 {
 	if(empty($query)){return false;}
-	$query = mysql_real_escape_string($query);
+	#$query = mysql_real_escape_string($query);
 	return mysql_query($query) or die( mysql_error() );
 }
 # Fungsi menghitung jumalh records
@@ -72,6 +72,21 @@ function Insert( $tabel = "", $array = array() )
 			if($execute){
 				return Insert_ID();	
 			}
+		}
+	}
+}
+
+function Update( $tabel = "", $array = array(), $clause = "" )
+{
+	if( !empty($tabel) and is_array($array) ){
+		$r_query = array();
+		foreach((array)$array as $field=>$value){
+			$r_query[] = "`$field` = '$value'";	
+		}
+		if( count($r_query) > 0){
+			$query = implode(", ",$r_query);
+			$execute = Execute("UPDATE $tabel SET $query $clause");
+			return $execute;
 		}
 	}
 }
