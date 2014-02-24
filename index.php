@@ -24,7 +24,7 @@ ato aksi untuk mengolah data dari parameter $_GET. Nah fungsi script dibawah ini
 if( isset($_GET['mod']) and !empty($_GET['mod']) )
 {
 	$mod = trim($_GET['mod']);
-	$file = "action_".$actionmod;
+	$file = "action_".$mod;
 	if( file_exists(_ROOT . "modules/$mod/$file.php") ){
 		include_once _ROOT . "modules/$mod/$file.php";
 	}
@@ -38,8 +38,14 @@ include_once _ROOT . "includes/sidebar.php";
 if( isset($_GET['mod']) and !empty($_GET['mod']) )
 {
 	$mod = trim($_GET['mod']);
-	if( file_exists(_ROOT . "modules/$mod/$mod.php") ){
-		include_once _ROOT . "modules/$mod/$mod.php";
+	$file = $mod;
+	
+	if( isset($_GET['act']) and !empty($_GET['act']) ){
+		$file = trim($_GET['act']);	
+	}
+	
+	if( file_exists(_ROOT . "modules/$mod/$file.php") ){
+		include_once _ROOT . "modules/$mod/$file.php";
 	}else{
 		include_once _ROOT . "includes/404.php";	
 	}

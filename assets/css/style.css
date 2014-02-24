@@ -7,7 +7,8 @@ body {
 .container {
 	max-width: 960px !important;
 	background: #FFFFFF;
-	margin-top: 30px;	
+	margin-top: 30px;
+	margin-bottom: 30px;	
 }
 
 .navbar {
@@ -30,7 +31,33 @@ body {
 }
 
 footer {
-	margin-bottom: 20px;
-	background: #EEEEEE;	
+	background: #EEEEEE;
+	
 }
 
+footer .container {
+	padding: 20px;
+	border-top: 1px solid #EEEEEE;	
+}
+
+.panel, .panel-heading {
+	border-radius: 0px !important;
+	-moz-border-radius: 0px !important;
+	-webkit-border-radius: 0px !important;
+}
+
+#post-content {
+	border-bottom: 1px solid #cccccc;	
+}
+#post-content h2 {
+	font-size: 20px;	
+}
+
+#post-content h2 a {
+	color: #214E70;	
+}
+
+span.course {
+	padding-left: 10px;
+	text-transform: uppercase;	
+}

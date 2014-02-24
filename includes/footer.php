@@ -1,7 +1,7 @@
 	</div>
     <footer>
     	<div class="container">
-        Footer
+        Copyright 2014 E-Learning
         </div>
     </footer>
 </div>
