@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-$url = "http://".$_SERVER['SERVER_NAME'].str_replace("index.php","",$_SERVER['SCRIPT_NAME']);
+$url = "http://".$_SERVER['SERVER_NAME'].str_replace("admin.php","",$_SERVER['SCRIPT_NAME']);
 
 # Konstanta untuk mendefisniskan posisi root folder
 define('_ROOT',	dirname(__FILE__)."/");
@@ -13,7 +13,12 @@ define('_ASSET_URL',$url."assets/");
 include_once _ROOT . "includes/koneksi.php";
 include_once _ROOT . "includes/fungsi.db.php";
 include_once _ROOT . "includes/fungsi.web.php";
-include_once _ROOT . "includes/login.php";
+
+if( !cek_login() )
+{
+	#header('location:index.php?l=1');
+	#exit();	
+}
 
 /*
 Setiap halaman kemungkinan membutuhkan sebuah script aksi, baik berupa aksi saat submit form 
@@ -26,15 +31,21 @@ if( isset($_GET['mod']) and !empty($_GET['mod']) )
 {
 	$mod = trim($_GET['mod']);
 	$file = "action_".$mod;
-	if( file_exists(_ROOT . "modules/$mod/$file.php") ){
-		include_once _ROOT . "modules/$mod/$file.php";
+	
+	if( isset($_GET['act']) and !empty($_GET['act']) ){
+		$act = trim($_GET['act']);	
+		$file = "action_".$act;	
+	} 
+	
+	if( file_exists(_ROOT . "modules/$mod/admin/$file.php") ){
+		include_once _ROOT . "modules/$mod/admin/$file.php";
 	}
 	
 }
 
 # START LAYOUT
-include_once _ROOT . "includes/header.php";
-include_once _ROOT . "includes/sidebar.php";
+include_once _ROOT . "includes/admin_header.php";
+include_once _ROOT . "includes/admin_sidebar.php";
 
 if( isset($_GET['mod']) and !empty($_GET['mod']) )
 {
@@ -45,16 +56,16 @@ if( isset($_GET['mod']) and !empty($_GET['mod']) )
 		$file = trim($_GET['act']);	
 	}
 	
-	if( file_exists(_ROOT . "modules/$mod/$file.php") ){
-		include_once _ROOT . "modules/$mod/$file.php";
+	if( file_exists(_ROOT . "modules/$mod/admin/$file.php") ){
+		include_once _ROOT . "modules/$mod/admin/$file.php";
 	}else{
 		include_once _ROOT . "includes/404.php";	
 	}
 }
 else
 {
-	include_once _ROOT . "modules/home/home.php";	
+	include_once _ROOT . "modules/home/admin/home.php";	
 }
 
-include_once _ROOT . "includes/footer.php";
+include_once _ROOT . "includes/admin_footer.php";
 # END LAYOUT

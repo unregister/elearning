@@ -70,18 +70,22 @@
     
         <div class="panel-heading"><h3 class="panel-title">LOGIN</h3></div>
         <div class="panel-body">
-        
-        <form class="form-horizontal" role="form">
+        <?php 
+		if( isset($_login_msg) ){ echo $_login_msg; } 
+		if( !cek_login() )
+		{
+		?>
+        <form class="form-horizontal" role="form" method="post" action="">
           <div class="form-group">
 
             <div class="col-sm-12">
-              <input type="text" class="form-control" id="userid" placeholder="User ID">
+              <input type="text" class="form-control" id="userid" name="userid" placeholder="User ID">
             </div>
           </div>
           <div class="form-group">
  
             <div class="col-sm-12">
-              <input type="password" class="form-control" id="password" placeholder="Password">
+              <input type="password" class="form-control" id="password" name="password" placeholder="Password">
             </div>
           </div>
           
@@ -91,7 +95,13 @@
             </div>
           </div>
         </form>
+        <?php
+		}else{
+		?>
         
+        <?php
+		}
+		?>
         </div>
    </div>
     
