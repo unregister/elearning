@@ -45,6 +45,7 @@ if( isset($_GET['mod']) and !empty($_GET['mod']) )
 		$file = trim($_GET['act']);	
 	}
 	
+	
 	if( file_exists(_ROOT . "modules/$mod/$file.php") ){
 		include_once _ROOT . "modules/$mod/$file.php";
 	}else{
@@ -53,7 +54,11 @@ if( isset($_GET['mod']) and !empty($_GET['mod']) )
 }
 else
 {
-	include_once _ROOT . "modules/home/home.php";	
+	if( isset($_GET['l']) and $_GET['l'] == 1 ){
+		include_once _ROOT . "includes/must_login.php";
+	}else{
+		include_once _ROOT . "modules/home/home.php";	
+	}
 }
 
 include_once _ROOT . "includes/footer.php";

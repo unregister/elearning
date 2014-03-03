@@ -18,10 +18,26 @@ function success( $msg = "" ){
 
 function cek_login()
 {
-	if( isset($_SESSION['_login']) or !empty($_SESSION['_login']) )	{
+	if( isset($_SESSION['_login']) and !empty($_SESSION['_login']) )	{
 		return true;	
 	}
 	return false;
+}
+
+function logout(){
+	unset($_SESSION['_login']);
+	$_SESSION['_login'] = array();
+}
+
+function set_msg( $str ){
+	$_SESSION['_msg'] = $str;	
+}
+
+function get_msg(){
+	if( isset($_SESSION['_msg']) ){
+		echo $_SESSION['_msg'];	
+		unset($_SESSION['_msg']);
+	}
 }
 
 function get_login()
@@ -71,5 +87,13 @@ function link_tambah($url="",$title="Tambah data", $attr = "")
 	$title = strtoupper($title);
 	$str = "<a href=\"$url\" class=\"btn btn-success btn-xs\" $attr>
 			<i class=\"glyphicon glyphicon-plus\"></i> $title</a>";
+	return $str;
+}
+
+function link_data( $url = '', $title = '' )
+{
+	$title = strtoupper($title);
+	$str = "<a href=\"$url\" class=\"btn btn-success btn-xs\">
+			<i class=\"glyphicon glyphicon-list-alt\"></i> $title</a>";
 	return $str;
 }

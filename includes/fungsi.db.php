@@ -91,6 +91,11 @@ function Update( $tabel = "", $array = array(), $clause = "" )
 	}
 }
 
+function Delete( $table = '', $clause = '')
+{
+	return Execute("DELETE FROM $table $clause");
+}
+
 # Fungsi mendapatkan id terkahir yg diinsert
 function Insert_ID()
 {

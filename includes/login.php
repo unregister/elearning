@@ -18,6 +18,10 @@ if( isset($_POST['login']) )
 		{
 			$data = GetRow($query);
 			$_SESSION['_login'] = $data;
+			
+			if( $data['grup_id'] == 1 ){
+				header('location:admin.php');	
+			}
 		}
 		else
 		{

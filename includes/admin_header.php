@@ -38,6 +38,8 @@
                              <strong class="caret"></strong></a>
 							<ul class="dropdown-menu">
 								<li><a href="<?=_URL?>admin.php?mod=kurikulum">Data kurikulum</a></li>
+                                <li><a href="<?=_URL?>admin.php?mod=mapel">Data mata pelajaran</a></li>
+                                <li><a href="<?=_URL?>admin.php?mod=kelas">Data kelas</a></li>
 							</ul>
 						</li>
 					</ul>
@@ -54,16 +56,13 @@
 								<li>
 									<a href="#">Ubah password</a>
 								</li>
-								<li>
-									<a href="#">Logout</a>
-								</li>
 								<li class="divider">
 								</li>
 								
 							</ul>
 						</li>
                         <li>
-							<a href="#">LOGOUT</a>
+							<a href="<?=_URL?>admin.php?logout=1">LOGOUT</a>
 						</li>
 					</ul>
 				</div>

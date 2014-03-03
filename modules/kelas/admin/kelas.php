@@ -1,21 +1,19 @@
 <div class="col-md-12" id="content-container">
 <div class="panel panel-primary">
 
-    <div class="panel-heading"><h3 class="panel-title">Data kurikulum</h3></div>
+    <div class="panel-heading"><h3 class="panel-title">Data kelas</h3></div>
     <div class="panel-body"> 
         
             <div class="row clearfix">
             <div class="col-md-12 column" id="post">
-            	<div class="text-left" style="margin-bottom:15px;"><?=link_tambah("admin.php?mod=kurikulum&act=add_kurikulum")?></div>
+            	<div class="text-left" style="margin-bottom:15px;"><?=link_tambah("admin.php?mod=kelas&act=add_kelas")?></div>
             	<div class="table-responsive">
                 <?php get_msg(); ?>
             	<table class="table">
 					<thead>
                     	<tr>
                         	<th>ID</th>
-                            <th>Nama kurikulum</th>
-                            <th>Tahun pertama</th>
-                            <th>Tahun kedua</th>
+                            <th>Nama kelas</th>
                             <th>Aksi</th>
                         </tr>
                     </thead>
@@ -25,17 +23,15 @@
 						<?php
                         if( $num_rows > 0 )
                         {
-                            foreach($kurikulum as $row)
+                            foreach($result as $row)
                             {
                          ?>
                          		<tr>
-                                	<td><?=$row['kurikulum_id']?></td>
-                                    <td><?=$row['kurikulum_nama']?></td>
-                                    <td><?=$row['kurikulum_tahun_pertama']?></td>
-                                    <td><?=$row['kurikulum_tahun_kedua']?></td>
+                                	<td><?=$row['kelas_id']?></td>
+                                    <td><?=$row['kelas_nama']?></td>
                                     <td>
-										<?=link_edit("admin.php?mod=kurikulum&act=edit_kurikulum&id=".$row['kurikulum_id'])?>
-                                        <?=link_hapus("admin.php?mod=kurikulum&delete=yes&id=".$row['kurikulum_id'])?>                     
+									<?=link_edit("admin.php?mod=kelas&act=edit_kelas&id=".$row['kelas_id'])?>
+                                    <?=link_hapus("admin.php?mod=kelas&delete=yes&id=".$row['kelas_id'])?>
                                     </td>
                                 </tr>
                          <?php  

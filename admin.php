@@ -13,11 +13,19 @@ define('_ASSET_URL',$url."assets/");
 include_once _ROOT . "includes/koneksi.php";
 include_once _ROOT . "includes/fungsi.db.php";
 include_once _ROOT . "includes/fungsi.web.php";
+include_once _ROOT . "includes/fungsi.form.php";
+include_once _ROOT . "includes/pagination.php";
 
 if( !cek_login() )
 {
-	#header('location:index.php?l=1');
-	#exit();	
+	header('location:index.php?l=1');
+	exit();	
+}
+
+if( isset($_GET['logout']) and $_GET['logout'] == 1 ){
+	logout();
+	header('location:index.php?l=1');
+	exit();
 }
 
 /*
