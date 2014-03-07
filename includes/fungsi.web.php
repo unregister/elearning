@@ -97,3 +97,22 @@ function link_data( $url = '', $title = '' )
 			<i class=\"glyphicon glyphicon-list-alt\"></i> $title</a>";
 	return $str;
 }
+
+function tgl_indonesia($tgl)
+{
+	if( empty($tgl) ){ return false; }
+	$tanggal = substr($tgl,8,2);
+	$bulan = substr($tgl,5,2);
+	$tahun = substr($tgl,0,4);
+	$jam = substr($tgl,11,6);
+	return "$tanggal/$bulan/$tahun $jam";	
+}
+
+function get_foto( $nama, $folder = 'siswa' )
+{
+	if( !empty($nama) ){
+		if( file_exists(_ROOT."foto/$folder/".$nama) ){
+			return "<img src=\""._URL."foto/$folder/$nama\" width=\"100\" />\n";	
+		}
+	}
+}

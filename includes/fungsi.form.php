@@ -52,6 +52,33 @@ function form_file($title='',$name='',$val='',$attr=''){
 	return $out;
 }
 
+function form_dropdown_tanggal($title='',$name='',$val='')
+{
+	$arr_bulan = array(1=>'Januari','Februari','Maret','April','Mei','Juni','Juli','Agustus','September','Oktober','November','Desember');
+	
+
+	$out  = '<div class="form-group">';
+    $out .= '<label for="'.$name.'" class="col-sm-3 control-label">'.$title.'</label>';
+    $out .= '<div class="col-sm-9">';
+    $out .= '<select name="'.$name.'_tgl">';
+    for($i=1;$i<=31;$i++){
+    	$out .= '<option value="'.$i.'">'.$i.'</option>';
+	}
+	$out .= '</select>';
+	$out .= '<select name="'.$name.'_bln">';
+	foreach($arr_bulan as $no=>$nm){
+    	$out .= '<option value="'.$no.'">'.$nm.'</option>';
+	}
+	$out .= '</select>';
+	$out .= '<select name="'.$name.'_thn">';
+	for($j=1980;$j<=date('Y');$j++){
+    	$out .= '<option value="'.$j.'">'.$j.'</option>';
+	}
+    $out .= '</select>';
+    $out .= '</div></div>';	
+	return $out;
+}
+
 function form_button($title='',$name='',$attr='')
 {
 	$out  = '<div class="form-group">';
