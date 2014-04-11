@@ -1,23 +1,23 @@
 <div class="col-md-12" id="content-container">
 <div class="panel panel-primary">
 
-    <div class="panel-heading"><h3 class="panel-title">Data siswa</h3></div>
+    <div class="panel-heading"><h3 class="panel-title">Data mahasiswa</h3></div>
     <div class="panel-body"> 
         
             <div class="row clearfix">
             <div class="col-md-12 column" id="post">
-            	<div class="text-left" style="margin-bottom:15px;"><?=link_tambah("admin.php?mod=siswa&act=add_siswa")?></div>
+            	<div class="text-left" style="margin-bottom:15px;"><?=link_tambah("admin.php?mod=mahasiswa&act=add_mahasiswa")?></div>
             	<div class="table-responsive">
                 <form method="get" action="">
-                	<input type="hidden" name="mod" value="siswa">
-                    <input type="text" name="nama" placeholder="Nama siswa" /> <input type="submit" name="s" value="Cari">
+                	<input type="hidden" name="mod" value="mahasiswa">
+                    <input type="text" name="nama" placeholder="Nama mahasiswa" /> <input type="submit" name="s" value="Cari">
                 </form>
                 <?php get_msg(); ?>
             	<table class="table">
 					<thead>
                     	<tr>
                         	<th>NIS</th>
-                            <th>Nama siswa</th>
+                            <th>Nama mahasiswa</th>
                             <th>Kelas</th>
                             <th>Tempat lahir</th>
                             <th>Tanggal lahir</th>
@@ -37,16 +37,17 @@
                             {
                          ?>
                          		<tr>
-                                	<td><?=$row['siswa_nis']?></td>
-                                    <td><?=$row['siswa_nama']?></td>
-                                    <td><?=$kelas[$row['siswa_kelas_id']]?></td>
-                                    <td><?=tgl_indonesia($row['siswa_tgl_lahir'])?></td>
-                                    <td><?=$jenis_kelamin[$row['siswa_jk']]?></td>
-                                    <td><?=$agama[$row['siswa_agama']]?></td>
-                                    <td><?=$row['siswa_alamat']?></td>
+                                	<td><?=$row['mahasiswa_nis']?></td>
+                                    <td><?=$row['mahasiswa_nama']?></td>
+                                    <td><?=$kelas[$row['mahasiswa_kelas_id']]?></td>
+                                    <td><?=$row['mahasiswa_tempat_lahir']?></td>
+                                    <td><?=tgl_indonesia($row['mahasiswa_tgl_lahir'])?></td>
+                                    <td><?=$jenis_kelamin[$row['mahasiswa_jk']]?></td>
+                                    <td><?=$agama[$row['mahasiswa_agama']]?></td>
+                                    <td><?=$row['mahasiswa_alamat']?></td>
                                     <td>
-										<?=link_edit("admin.php?mod=siswa&act=edit_siswa&id=".$row['siswa_id'])?>
-                                        <?=link_hapus("admin.php?mod=siswa&delete=yes&id=".$row['siswa_id'])?>                     
+										<?=link_edit("admin.php?mod=mahasiswa&act=edit_mahasiswa&id=".$row['mahasiswa_id'])?>
+                                        <?=link_hapus("admin.php?mod=mahasiswa&delete=yes&id=".$row['mahasiswa_id'])?>                     
                                     </td>
                                 </tr>
                          <?php  

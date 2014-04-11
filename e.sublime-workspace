@@ -4,6 +4,26 @@
 		"selected_items":
 		[
 			[
+				"e",
+				"ekstensi"
+			],
+			[
+				"strto",
+				"strtolower"
+			],
+			[
+				"user",
+				"user_id"
+			],
+			[
+				"siswa",
+				"siswa_foto"
+			],
+			[
+				"_",
+				"_error"
+			],
+			[
 				"arr",
 				"arr_bulan"
 			],
@@ -31,7 +51,7 @@
 			"file": "modules/siswa/admin/add_siswa.php",
 			"settings":
 			{
-				"buffer_size": 1354,
+				"buffer_size": 1511,
 				"line_ending": "Unix"
 			}
 		},
@@ -39,7 +59,15 @@
 			"file": "modules/siswa/admin/action_add_siswa.php",
 			"settings":
 			{
-				"buffer_size": 354,
+				"buffer_size": 2838,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "includes/fungsi.db.php",
+			"settings":
+			{
+				"buffer_size": 2328,
 				"line_ending": "Unix"
 			}
 		},
@@ -55,7 +83,7 @@
 			"file": "includes/fungsi.form.php",
 			"settings":
 			{
-				"buffer_size": 3333,
+				"buffer_size": 3312,
 				"line_ending": "Unix"
 			}
 		}
@@ -184,7 +212,7 @@
 	"groups":
 	[
 		{
-			"selected": 3,
+			"selected": 1,
 			"sheets":
 			[
 				{
@@ -193,15 +221,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1354,
+						"buffer_size": 1511,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1162,
-								1162
+								705,
+								719
 							]
 						],
 						"settings":
@@ -223,15 +251,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 354,
+						"buffer_size": 2838,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								354,
-								354
+								2204,
+								2204
 							]
 						],
 						"settings":
@@ -239,14 +267,43 @@
 							"syntax": "Packages/PHP/PHP.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 592.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "includes/fungsi.db.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2328,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": -0.0,
+						"translation.y": 622.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 2,
 					"type": "text"
 				},
 				{
-					"buffer": 2,
+					"buffer": 3,
 					"file": "modules/siswa/admin/action_siswa.php",
 					"semi_transient": false,
 					"settings":
@@ -258,8 +315,8 @@
 						"selection":
 						[
 							[
-								676,
-								328
+								326,
+								326
 							]
 						],
 						"settings":
@@ -275,20 +332,20 @@
 					"type": "text"
 				},
 				{
-					"buffer": 3,
+					"buffer": 4,
 					"file": "includes/fungsi.form.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3333,
+						"buffer_size": 3312,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2145,
-								2166
+								2540,
+								2540
 							]
 						],
 						"settings":
@@ -296,10 +353,10 @@
 							"syntax": "Packages/PHP/PHP.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 457.0,
+						"translation.y": 427.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 4,
 					"type": "text"
 				}
 			]

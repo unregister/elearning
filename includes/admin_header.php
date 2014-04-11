@@ -37,10 +37,11 @@
 							 <a href="#" class="dropdown-toggle" data-toggle="dropdown">SEKOLAH
                              <strong class="caret"></strong></a>
 							<ul class="dropdown-menu">
-                            	<li><a href="<?=_URL?>admin.php?mod=siswa">Data siswa</a></li>
+                            	<li><a href="<?=_URL?>admin.php?mod=mahasiswa">Data mahasiswa</a></li>
 								<li><a href="<?=_URL?>admin.php?mod=kurikulum">Data kurikulum</a></li>
-                                <li><a href="<?=_URL?>admin.php?mod=mapel">Data mata pelajaran</a></li>
+                                <li><a href="<?=_URL?>admin.php?mod=matkul">Data mata kuliah</a></li>
                                 <li><a href="<?=_URL?>admin.php?mod=kelas">Data kelas</a></li>
+                                <li><a href="<?=_URL?>admin.php?mod=dosen">Data dosen</a></li>
 							</ul>
 						</li>
 					</ul>

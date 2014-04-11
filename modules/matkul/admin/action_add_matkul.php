@@ -1,16 +1,16 @@
 <?php
-if( isset($_POST['add_mapel']) )
+if( isset($_POST['add_matkul']) )
 {	
-	if( $_POST['mapel_nama'] == '' ){
-		$_error = "Nama mapel harus diisi";	
+	if( $_POST['matkul_nama'] == '' ){
+		$_error = "Nama matkul harus diisi";	
 	}
 	
 	if( isset($_error) )
 	{
 		$_msg = error( $_error );	
 	}else{
-		$data['mapel_nama']	 = $_POST['mapel_nama'];		
-		$insert = Insert("mata_pelajaran", $data);
+		$data['matkul_nama']	 = $_POST['matkul_nama'];		
+		$insert = Insert("mata_kuliah", $data);
 		
 		if( $insert )
 		{
