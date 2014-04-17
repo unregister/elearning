@@ -16,11 +16,17 @@ function success( $msg = "" ){
 	return "<div class=\"alert alert-success\">$msg</div>";
 }
 
-function cek_login()
+function cek_login( $redirect = false )
 {
 	if( isset($_SESSION['_login']) and !empty($_SESSION['_login']) )	{
 		return true;	
 	}
+	
+	if( $redirect ){
+		header('location:index.php?l=1');
+		exit();	
+	}
+	
 	return false;
 }
 

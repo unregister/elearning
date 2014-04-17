@@ -1,4 +1,6 @@
-<?php
+<?php 
+cek_login(true);
+	
 if( isset( $_GET['kategori_id']) and !empty($_GET['kategori_id']) )
 {
 	$kategori_id = (int)$_GET['kategori_id'];

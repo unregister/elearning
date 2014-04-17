@@ -39,7 +39,7 @@
                                     <td><?=$r_kategori[$row['kategori_id']]?></td>
                                     <td><?=$row['course_judul']?></td>
                                     <td><?=$r_dosen[$row['user_id']]?></td>
-                                    <td><?=tgl_indonesia($row['course_tanggal'])?></td>
+                                    <td><?=tgl_indonesia($row['course_tgl'])?></td>
                                     <td><?=$publish[$row['course_publish']]?></td>
                                     <td>
 										<?=link_edit("admin.php?mod=course&act=edit_course&id=".$row['course_id'])?>

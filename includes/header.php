@@ -28,7 +28,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                   </button>
-                  <a class="navbar-brand" href="#">E-Learning</a>
+                  <a class="navbar-brand" href="<?=_URL?>">E-Learning</a>
                 </div>
             
             
@@ -39,12 +39,14 @@
                     <li><a href="<?=_URL?>index.php?mod=course&act=about">TENTANG E-LEARNING</a></li>
                     
                   </ul>
-                  <form class="navbar-form navbar-right" role="search">
+                  <!--<form class="navbar-form navbar-right" role="search" method="get" action="">
+                  	<input type="hidden" name="mod" value="course">
+                    <input type="hidden" name="act" value="search">
                     <div class="form-group">
-                      <input type="text" class="form-control" placeholder="Search">
+                      <input type="text" name="q" class="form-control" placeholder="Search">
                     </div>
-                    <button type="submit" class="btn btn-default">Submit</button>
-                  </form>
+                    <button type="submit" class="btn btn-default">CARI</button>
+                  </form>-->
                   
                 </div>
                 
