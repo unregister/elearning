@@ -37,6 +37,18 @@ if( isset($_GET['mod']) and !empty($_GET['mod']) )
 		include_once _ROOT . "modules/$mod/$file.php";
 	}
 	
+}else{
+	$mod = 'home';
+	$file = "action_".$mod;
+	
+	if( isset($_GET['act']) and !empty($_GET['act']) ){
+		$act = trim($_GET['act']);	
+		$file = "action_".$act;	
+	} 
+	
+	if( file_exists(_ROOT . "modules/$mod/$file.php") ){
+		include_once _ROOT . "modules/$mod/$file.php";
+	}
 }
 
 if( isset($_GET['logout']) and $_GET['logout'] == 1 ){

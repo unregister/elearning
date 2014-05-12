@@ -43,24 +43,32 @@
         </form>
         <?php
 		}else{
-		$datalogin = get_login();
-		$image = $datalogin['mahasiswa_foto'];
-		$name = $datalogin['mahasiswa_nama'];
+			if( $_SESSION['_login']['grup_id'] != 1 )
+			{
+				$datalogin = get_login();
+				$image = $datalogin['mahasiswa_foto'];
+				$name = $datalogin['mahasiswa_nama'];
 		?>
         <div class="text-center">SELAMAT DATANG <?=$name?></div><br>
         <?php
-		if( $image and file_exists(_ROOT."foto/mahasiswa/".$image) )
-		{
+				if( $image and file_exists(_ROOT."foto/mahasiswa/".$image) )
+				{
 		?>
-        	<div class="text-center">
-            <img src="<?=_URL?>foto/mahasiswa/<?=$image?>" width="200" alt="" class="img-rounded">
-            </div>
+                    <div class="text-center">
+                    <img src="<?=_URL?>foto/mahasiswa/<?=$image?>" width="200" alt="" class="img-rounded">
+                    </div>
         <?php
-		}
+				}
 		?>
         <br>
         <div class="text-center"><a href="index.php?logout=1">Logout</a></div>
         <?php
+			}else{
+		?>
+        	 <div class="text-center">Anda login sebagai Administrator. Silahkan <a href="admin.php">klik disini</a> untuk menuju halaman admin.<br /><br /><a href="index.php?logout=1">Logout</a></div>
+        
+        <?php	
+			}
 		}
 		?>
         </div>

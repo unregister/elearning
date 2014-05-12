@@ -5,54 +5,31 @@
         <div class="panel-body"> 
             
                 <div class="row clearfix">
-                
-                    <div class="col-md-12 column" id="post">
-                    	<div id="post-content">
-                            <h2><a href="">Porta gravida at eget metus</a></h2>
-                            <p>
-                                Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
-                            </p>
-                            <p>
-                                <a class="btn" href="#">View details »</a>
-                            </p>
-                        </div>
-                    </div>
-                    
-                    <div class="col-md-12 column" id="post">
-                       <div id="post-content">
-                            <h2><a href="">Donec id elit non mi porta gravida at eget metus</a></h2>
-                            <p>
-                                Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
-                            </p>
-                            <p>
-                                <a class="btn" href="#">View details »</a>
-                            </p>
-                        </div>
-                    </div>
+                	
+                    <?php
+					if( $berita )
+					{
+                    foreach((array)$berita as $news)
+					{
+                    ?>
                     
                     <div class="col-md-12 column" id="post">
                     	<div id="post-content">
-                            <h2><a href="">Fermentum massa justo sit amet risus</a></h2>
+                            <h2><a href="index.php?mod=berita&act=detail&id=<?=$news['berita_id']?>"><?=$news['berita_judul']?></a></h2>
+                            <div id="info-content">Diposting oleh : <strong><?=$news['dosen_nama']?></strong> | Tanggal : <?=tgl_indonesia($news['berita_tanggal'])?> </div>
                             <p>
-                                Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+                               <?= substr( strip_tags($news['berita_isi']),0,300)?>
                             </p>
                             <p>
-                                <a class="btn" href="#">View details »</a>
+                                <a class="btn" href="index.php?mod=berita&act=detail&id=<?=$news['berita_id']?>">Lihat detail »</a>
                             </p>
                         </div>
                     </div>
+                    <?php
+					}
+					}
+					?>
                     
-                    <div class="col-md-12 column" id="post">
-                       <div id="post-content">
-                            <h2><a href="">Fusce dapibus, tellus ac cursus commodo</a></h2>
-                            <p>
-                                Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
-                            </p>
-                            <p>
-                                <a class="btn" href="#">View details »</a>
-                            </p>
-                        </div>
-                    </div>
                     
                 </div>  
         

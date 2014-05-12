@@ -13,10 +13,18 @@ $menu[1]['AKADEMIK'][] = array('title'=>'Data mata kuliah', 'link' => 'admin.php
 $menu[1]['AKADEMIK'][] = array('title'=>'Data kelas', 'link' => 'admin.php?mod=kelas');
 $menu[1]['AKADEMIK'][] = array('title'=>'Data dosen', 'link' => 'admin.php?mod=dosen');
 
+$menu[1]['BERITA'][] = array('title'=>'Data berita', 'link' => 'admin.php?mod=berita');
+$menu[1]['BERITA'][] = array('title'=>'Tambah berita', 'link' => 'admin.php?mod=berita&act=add_berita');
+
 $menu[2]['KATEGORI'][] = array('title'=>'Data kategori', 'link' => 'admin.php?mod=kategori');
 $menu[2]['KATEGORI'][] = array('title'=>'Tambah kategori', 'link' => 'admin.php?mod=kategori&act=add_kategori');
 $menu[2]['COURSE'][] = array('title'=>'Data course', 'link' => 'admin.php?mod=course');
 $menu[2]['COURSE'][] = array('title'=>'Tambah course', 'link' => 'admin.php?mod=course&act=add_course');
+
+$menu[2]['BERITA'][] = array('title'=>'Data berita', 'link' => 'admin.php?mod=berita');
+$menu[2]['BERITA'][] = array('title'=>'Tambah berita', 'link' => 'admin.php?mod=berita&act=add_berita');
+
+
 
 //print_r($menu);
 ?>

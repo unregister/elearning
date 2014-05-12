@@ -11,6 +11,7 @@ if( isset($_GET['id']) and !empty($_GET['id']) )
 		$filename = $row['course_file'];
 		
 		if( $filename and file_exists(_ROOT."files/$filename") ){
+			Execute("UPDATE course SET course_download = course_download+1 WHERE course_id = $id");
 			header('location:'._URL."files/$filename");
 			exit();
 		}else{

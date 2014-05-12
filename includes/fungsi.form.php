@@ -60,7 +60,15 @@ function form_file($title='',$name='',$val='',$attr=''){
 	if( !empty($val) and file_exists(_ROOT.$val) )
 	{
 		$out .= '<input type="hidden" name="hidden_foto" value="'.$val.'">';
-		$out .= '<img src="'._URL.$val.'" style="width:150px;"/><br>';	
+		$ext = strtolower( end( explode(".",$val) ) );
+		$filename = end( explode("/",$val) ) ;
+		
+		if( in_array($ext,array('jpg','jpeg','gif','bmp','png') ) ){
+			$out .= '<img src="'._URL.$val.'" style="width:150px;"/><br>';
+		}else{
+			$out .= '<img src="'._URL."assets/file.png".'" /><br>';
+		}
+		$out .= $filename."<br>";
 	}
 	
     $out .= '<input type="file" name="'.$name.'" id="'.$name.'" value="'.$val.'" '.$attr.'>';

@@ -1,6 +1,6 @@
 <?php
 session_start();
-
+error_reporting(0);
 $url = "http://".$_SERVER['SERVER_NAME'].str_replace("admin.php","",$_SERVER['SCRIPT_NAME']);
 
 # Konstanta untuk mendefisniskan posisi root folder

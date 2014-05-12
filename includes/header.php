@@ -17,7 +17,11 @@
 	<div class="row clearfix">
     
     	<div class="container">
-        
+            
+          <div class="logo">
+            <img src="<?=_URL?>assets/logo.png" style="width:100px;">            
+          </div>
+
             <nav class="navbar navbar-default navbar-inverse" role="navigation">
               <div class="container-fluid">
             

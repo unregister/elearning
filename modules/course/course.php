@@ -25,6 +25,7 @@
                         <a href="<?=_URL?>index.php?mod=course&act=download&id=<?=$row['course_id']?>" class="btn btn-success btn-xs">
                         DOWNLOAD
                         </a>
+                        <a class="btn btn-default btn-xs"> Di download <?=$row['course_download']?> kali</a>
                         </div>
                       </div>
                     </div>
