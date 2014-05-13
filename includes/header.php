@@ -10,6 +10,9 @@
 <script type="text/javascript" src="<?=_ASSET_URL?>js/bootstrap.min.js"></script>
 <script type="text/javascript" src="<?=_ASSET_URL?>jquery.treeview/jquery.treeview.js"></script>
 <script type="text/javascript" src="<?=_ASSET_URL?>js/scripts.js"></script>
+<script type="text/javascript">
+ var BASE_URL = '<?=_URL?>';
+</script>
 
 </head>
 <body>
@@ -41,6 +44,7 @@
                   <ul class="nav navbar-nav">
                     <li class="active"><a href="<?=_URL?>">HOME</a></li>
                     <li><a href="<?=_URL?>index.php?mod=course&act=about">TENTANG E-LEARNING</a></li>
+                    <li><a href="<?=_URL?>index.php?mod=chat">CHAT ROOM</a></li>
                     
                   </ul>
                   <!--<form class="navbar-form navbar-right" role="search" method="get" action="">
